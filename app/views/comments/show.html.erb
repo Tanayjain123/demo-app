@@ -1,0 +1,38 @@
+<h1>im show of comment</h1>
+<div>
+<strong>user email: </strong> <%= @user.email %><br>
+<strong>user password: </strong> <%= @user.password %><br>
+<strong>user first_name: </strong> <%= @user.first_name %><br>
+<strong>user last_name: </strong> <%= @user.last_name %><br>
+</div>
+<br>
+
+<div>
+<strong>post author: </strong> <%= @post.author %><br>
+<strong>user body: </strong> <%= @post.body %><br>
+<strong>user published: </strong> <%= @post.published %><br>
+
+</div>
+<br>
+
+<div>
+<strong> comments by user</strong><br>
+<strong>comment author name: </strong> <%= @comment.author %><br>
+<strong>comment body: </strong><%= @comment.body %><br>
+<strong>replied to :</strong><%= @comment.replycomment_id %><br>
+</div>
+<br>
+<%= link_to 'path to index page' , root_path %>
+
+
+<%= @post.comments.each do |comments|%>
+<p>
+<strong>author name:</strong><% comments.author %> </br>
+<strong>comment body:</strong><% comments.body %><br>
+<strong>replycomment_id:</strong><% comments.replycomment_id %><br>
+
+</p>
+<%end%>
+<br>
+
+<%= search_field(:comment, :body) %>

@@ -1,0 +1,8 @@
+
+
+# doubt Comment.joins(:replies).group('comments.id').having('count(comments.id)>?', 1)
+# 1 #Post.find(13).comments.where(created_at:(Time.zone.today-1.day)..Time.now)
+#2  #Post.find(13).comments.find(5).replies.where(created_at: (Time.zone.today-1.day)..Time.now).count
+#3  #Post.includes(:comments).where(comments: {id: nil})
+#4 #Post.joins(:comments).group('posts.id').having('count(comments.id) > ?', 1)
+#5 #scope :search_like, -> (body, search_string) {where("#{body} LIKE ?", "%#{search_string}%")}
